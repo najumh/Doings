@@ -13,6 +13,7 @@ const CommitLog = () => {
     const [commitLogs, setCommitLogs] = useState([])
 
     useEffect(()=>{ 
+        if(!project?.id) return
         axios.get(`/api/projects/${project?.id}/commitlogs`)
         .then((response)=>{
             setCommitLogs(response.data)
