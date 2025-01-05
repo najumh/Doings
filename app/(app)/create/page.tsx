@@ -11,6 +11,7 @@ import { toast } from 'sonner'
 type FormInput = {
     repoUrl: string
     projectName: string
+    bracnh: string
     githubToken?: string
 }
 
@@ -62,6 +63,12 @@ const CreatePage = () => {
                     <Input 
                         {...register('repoUrl',{required:true})}
                         placeholder='Github URL'
+                        required
+                    />
+                    <div className="h-2"></div>
+                    <Input 
+                        {...register('branch',{required:true})}
+                        placeholder='Github Branch'
                         required
                     />
                     <div className="h-2"></div>
